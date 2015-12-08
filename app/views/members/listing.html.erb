@@ -1,0 +1,8 @@
+<% @memberships.each do |membership| %>
+  <tr>
+    <td><%= link_to membership.member.member_external_id, membership.member %></td>
+    <td><%= membership.member.gender %></td>
+    <td><%= membership.member.address %></td>
+    <td><%= membership.member.birth_date %></td>
+  </tr>
+<% end %>

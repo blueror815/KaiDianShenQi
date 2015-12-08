@@ -1,0 +1,58 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+zh_CN:
+  hello: "您好"
+  total_visits: "总到店会员"
+  total_members: "总会员"
+  glance_of_all_members: "所有会员一览"
+  new_member: "新会员"
+  come_to_store_this_month: "本月到店"
+  overview: "效果概览"
+  campains: "短信营销"
+  members: "会员信息"
+  member_details: "会员信息 details"
+  profile: "帐号设置"
+  logout: "安全登出"
+  external_id: "手机号"
+  revenue_from_new_member: "本月新会员消费"
+  number_of_new_member: "本月新会员访问"
+  regular_member: "本月常客"
+  revenue_from_regular: "常客消费"
+  number_of_regular_member: "本月常客访问"
+  number_of_vip_member: "本月VIP访问"
+  create_promotion: "创建精准直发"
+  promotion: "精准直发"
+  send: "于"
+  delivered: "已发送"
+  order_after_deliver: "发送后购买次数"
+  unique_users_after_deliver: "发送后购买用户数"
+  award_management: "兑换管理"
+  auto_pilot_settings: "巡航设置"
+  start_create_promotion: "开始创建精准直发"
+  step_1: "第一步"
+  step_2: "第二步"
+  up_to: "有"
+  promotion_heading: "精准直发"
+  creating_promotion_heading: "正在准备创建精准直发"
+  target_customers_send_offers_and_track_results: "精准直发帮您定位到客户群体，准确地发送新品信息或优惠信息，且您可以轻松直观地在这里看到发送后的效果"
+  we_will_automatically_reach_your_customer_over_the_preferred_channel: "我们将用算法在后台自动帮您用多种渠道达将消息送到到您的的客户，包括短信，APP内通知等"
+

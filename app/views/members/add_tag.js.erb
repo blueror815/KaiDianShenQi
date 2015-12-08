@@ -1,0 +1,9 @@
+$(document).ready(function(){
+  <% if @reserved_tag_block %>
+    <%= add_gritter("Failed to add tag. This tag is reserved.")%>    
+  <% else %>
+    $("#tag").val("");
+    $(".tags").html("<%= @tags.join("&nbsp;").html_safe %>")
+    <%= add_gritter("Tag added successfully")%>    
+  <% end %>
+})

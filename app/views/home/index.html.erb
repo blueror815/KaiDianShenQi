@@ -1,0 +1,232 @@
+<div class="content-heading">
+   <!-- START Language list-->
+   <div class="pull-right">
+      <div class="btn-group">
+         <button type="button" data-toggle="dropdown" class="btn btn-default">English</button>
+         <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
+            <li><a href="#" data-set-lang="en">English</a>
+            </li>
+            <li><a href="#" data-set-lang="es">Spanish</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <!-- END Language list    -->
+   Dashboard
+   <small data-localize="dashboard.WELCOME"></small>
+</div>
+<!-- START widgets box-->
+<div class="row">
+   <div class="col-lg-3 col-sm-6">
+      <!-- START widget-->
+      <div class="panel widget bg-purple">
+         <div class="row row-table">
+            <div class="col-xs-4 text-center bg-purple-dark pv-lg">
+               <em class="icon-globe fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+              <div class="text-uppercase"><%= t :total_visits%></div>
+               <div class="h2 mt0">1700</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-md-6 col-sm-12">
+      <!-- START widget-->
+      <div class="panel widget bg-green">
+         <div class="row row-table">
+            <div class="col-xs-4 text-center bg-green-dark pv-lg">
+               <em class="icon-emoticon-smile fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+              <div class="text-uppercase">Referal</div>
+               <div class="h2 mt0">500</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-sm-6">
+      <!-- START widget-->
+      <div class="panel widget bg-primary">
+         <div class="row row-table">
+            <div class="col-xs-4 text-center bg-primary-dark pv-lg">
+               <em class="icon-users fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+              <div class="text-uppercase"><%= t :total_members %></div>
+               <div class="h2 mt0"><%= @total_members %></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-md-4 col-sm-12">
+      <!-- START widget-->
+      <div class="panel widget bg-white">
+         <div class="panel-body">
+            <div class="clearfix">
+               <h3 class="pull-left text-muted mt0">300 Clients</h3>
+               <em class="pull-right text-muted fa fa-coffee fa-2x"></em>
+            </div>
+            <div class="progress progress-xs">
+               <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%" class="progress-bar progress-bar-info progress-bar-striped">
+                  <span class="sr-only">80% Complete</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END widget-->
+   </div>
+</div>
+<!-- END widgets box-->
+<div class="row">
+   <!-- START dashboard main content-->
+   <div class="col-lg-9">
+      <div class="row">
+         <div class="col-lg-12">
+           <div class="panel widget bg-white">
+             <div class="panel-body">
+               <div class="clearfix">
+                 <h1><%= t :glance_of_all_members %></h1>
+               </div>
+               <div class="col-lg-4">
+                 <!-- START List group-->
+                 <ul class="list-group">
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <h3><%= t :new_member %></h3>
+                             <p class="m0">
+                                <small><%= t :come_to_store_this_month %></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <p class="m0 lead">￥ <%= @new_user_revenue %></p>
+                             <p class="m0">
+                                <small><%= t :revenue_from_new_member %></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <p class="m0 lead">67</p>
+                             <p class="m0">
+                                <small><%= t :number_of_new_member %></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                 </ul>
+                 <!-- END List group-->
+               </div>
+               <div class="col-lg-4">
+                 <!-- START List group-->
+                 <ul class="list-group">
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <h3><%= t :regular_member%></h3>
+                             <p class="m0">
+                                <small><%= t :come_to_store_this_month%> </small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <p class="m0 lead">￥ <%= @regular_user_revenue %></p>
+                             <p class="m0">
+                               <small><%= t :revenue_from_regular%></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <p class="m0 lead">67</p>
+                             <p class="m0">
+                               <small><%= t :number_of_regular_member%></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                 </ul>
+                 <!-- END List group-->
+               </div>
+               <div class="col-lg-4">
+                 <!-- START List group-->
+                 <ul class="list-group">
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <h3>VIP</h3>
+                             <p class="m0">
+                                <small><%= t :come_to_store_this_month%></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <p class="m0 lead">￥ <%= @vip_user_revenue %></p>
+                             <p class="m0">
+                                <small><%= t :revenue_from_regular%></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                    <li class="list-group-item">
+                       <div class="row row-table pv-lg">
+                          <div class="col-xs-8">
+                             <p class="m0 lead">67</p>
+                             <p class="m0">
+                                <small><%= t :number_of_vip_member%></small>
+                             </p>
+                          </div>
+                       </div>
+                    </li>
+                 </ul>
+                 <!-- END List group-->
+               </div>
+
+
+             </div>
+           </div>
+         </div>
+      </div>
+   </div>
+   <!-- END dashboard main content-->
+   <!-- START dashboard sidebar-->
+   <aside class="col-lg-3">
+     <!-- START panel-->
+     <div class="panel panel-warning">
+        <div class="panel-heading">
+           <div class="row">
+              <div class="col-xs-3">
+                 <em class="fa fa-shopping-cart fa-5x"></em>
+              </div>
+              <div class="col-xs-9 text-right">
+                 <div class="text-lg">124</div>
+                 <p class="m0">Annual Sales</p>
+              </div>
+           </div>
+        </div>
+        <a href="#" class="panel-footer bg-gray-dark bt0 clearfix btn-block">
+           <span class="pull-left">View Details</span>
+           <span class="pull-right">
+              <em class="fa fa-chevron-circle-right"></em>
+           </span>
+        </a>
+     </div>
+     <!-- END panel-->
+   </aside>
+   <!-- END dashboard sidebar-->
+</div>

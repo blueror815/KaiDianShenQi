@@ -1,0 +1,31 @@
+<%= simple_form_for(@setting) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :retailer_id, as: :hidden, input_html: { value: current_retailer.id } %>
+  <div class="form-group">
+      <%= f.input :welcome_message , :input_html=> { :class=> 'form-control' }%>
+  </div>
+  <div class="form-group">
+      <%= f.input :growth_message , :input_html=> { :class=> 'form-control' }%>
+  </div>
+  <div class="form-group">
+      <%= f.input :risk_message , :input_html=> { :class=> 'form-control' }%>
+  </div>
+  <div class="form-group">
+      <%= f.input :no_of_order_to_send_growth_sms, :input_html=> { :class=> 'form-control' } %>
+  </div>
+  <div class="form-group">
+      <%= f.input :no_of_days_to_send_lapse_message , :input_html=> { :class=> 'form-control' }%>
+  </div>
+  <div class="form-group">
+      <%= f.input :test_promotion_contact_no , :input_html=> { :class=> 'form-control' }%>
+  </div>
+  <div class="form-group">
+      <%= f.input :qr_image , :input_html=> { :class=> 'form-control' }%>
+      <div>
+        <%= image_tag(@setting.qr_image.url, class: 'qr-code-image') if @setting.qr_image.exists?  %> 
+      </div>
+  </div>
+  <div class="form-group">
+      <%= f.button :submit, :class=> 'btn btn-sm btn-primary' %>
+  </div>
+<%end%>

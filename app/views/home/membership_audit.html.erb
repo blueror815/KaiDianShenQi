@@ -1,0 +1,62 @@
+<h3>audits</h3>
+<!-- START panel-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <!--div class="panel-heading">
+
+            <!--small>Zero Configuration</small-->
+
+            <div class="panel-body">
+                <div class="row m-b-15">
+                    <div class="col-xs-6">
+                        Membership audits
+                    </div>
+                  </div>
+                  <table class="table table-border table-striped table-hover">
+                      <thead>
+                          <tr>
+                              <th>Member name</th>
+                              <th>Version</th>
+                              <th>Action</th>
+                              <th>Change</th>
+                              <th>Change time</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <% @membership_audits.each do |audit| %>
+                            <tr>
+                                <td><%= audit.auditable.member.member_external_id %></td>
+                                <td><%= audit.version %></td>
+                                <td><%= audit.action %></td>
+                                <td>
+                                  <table class="table table-bordered">
+                                    <tr>
+                                      <td>Attribute name</td>
+                                      <td>Previous value</td>
+                                      <td>New value</td>
+                                    </tr>
+                                    <% audit.audited_changes.each do | key, value| %>
+                                      <tr>
+                                        <td><%= key %></td>
+                                        <% if value && value.class == Array %>
+                                          <td><%= value[0] %></td>
+                                          <td><%= value[1] %></td>
+                                        <% elsif value %>
+                                          <td colspan=2><%= value %></td>
+                                        <%end %>
+                                      </tr>
+                                    <% end %>    
+                                  </table> 
+                                </td>
+                                <td><%= audit.created_at %></td>
+                            </tr>
+                          <%end%>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+
+

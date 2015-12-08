@@ -1,0 +1,22 @@
+<main class="mdl-layout__content">
+  <div class="page-content cw-member-introduce-page">
+    <% if @award %>
+    <p class="cw-description">输入手机号获取积分</p>
+    <%= form_tag award_members_path, id: 'js-mobile-form' do %>
+      <%= hidden_field_tag :award_id, @award.id %>
+      <%= hidden_field_tag :code, @open_id %>
+      <div class="mdl-textfield mdl-js-textfield cw-phone-textfield">
+        <%= telephone_field_tag :phone, @phone_number, class: 'mdl-textfield__input',
+                                id: 'js-phone', placeholder: '手机号码', autofocus: true%>
+        <%= label_tag 'js-phone', '', class: 'mdl-textfield__label' %>
+        <span class="mdl-textfield__error">请输入有效的手机号码</span>
+      </div>
+      <div class="cw-actionfield cw-phone-button">
+        <%= button_tag '获取积分', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect', id: 'js-mobile-submit' %>
+      </div>
+    <% end %>
+    <% else %>
+      <p class="cw-description">二维码已失效。</p>
+    <% end %>
+  </div>
+</main>

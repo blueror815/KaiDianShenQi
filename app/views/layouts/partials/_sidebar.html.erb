@@ -1,0 +1,97 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+   <nav class="sidebar" data-sidebar-anyclick-close="">
+      <!-- START sidebar nav-->
+      <ul class="nav">
+         <!-- START user info-->
+         <li class="has-user-block">
+           <div id="user-block">
+             <div class="item user-block">
+               <div class="user-block-picture">
+                  
+               </div>
+               <div class="user-block-info">
+                  
+               </div>
+              </div>
+           </div>
+         </li>
+         <li>
+           <a href="<%= root_path %>" title="Overview">
+             <em class="fa fa-tachometer"></em>
+             <span data-localize="sidebar.nav.Overview"><%= t :overview %></span>
+           </a>
+         </li>
+         <li>
+           <a href="<%= analysis_path %>" title="Overview">
+             <em class="fa fa-tachometer"></em>
+             <span data-localize="sidebar.nav.Overview">analysis</span>
+           </a>
+         </li>
+         <% if can? :manage, Product %>
+         <li>
+           <a href="<%= products_path %>" title="Product">
+             <em class="fa fa-cart-plus"></em>
+             <span data-localize="sidebar.nav.Product"><%= t('award_management') %></span>
+           </a>
+         </li>
+         <% end %>
+         
+         <% if can? :manage, Promotion %>
+         <li>
+           <a href="/home/product_audit" title="Product audits">
+             <em class="fa fa-users"></em>
+             <span data-localize="sidebar.nav.ProductAudits"><%= t :product_audits %></span>
+           </a>
+         </li>
+         <li>
+           <a href="<%= promotions_path %>" title="Promotions">
+             <em class="fa fa-trophy"></em>
+             <span data-localize="sidebar.nav.Promotions"><%= t :promotion %></span>
+           </a>
+         </li>
+         <% end %>
+         <% if can? :manage, Employee %>
+         <li>
+           <a href="<%= employees_path %>" title="Employees">
+             <em class="fa fa-users"></em>
+             <span data-localize="sidebar.nav.Employees"><%= t :employees %></span>
+           </a>
+         </li>
+         <% end %>
+         <% if can? :manage, Member %>
+         <li>
+           <a href="<%= members_path %>" title="Members">
+             <em class="fa fa-users"></em>
+             <span data-localize="sidebar.nav.Members"><%= t :members %></span>
+           </a>
+         </li>
+         <% end %>
+         <li>
+           <a href="/home/membership_audit" title="Member audits">
+             <em class="fa fa-users"></em>
+             <span data-localize="sidebar.nav.MembersAudits"><%= t :member_audits %></span>
+           </a>
+         </li>
+         <% if current_retailer %>
+         <li>
+           <a href="<%= edit_setting_path(current_retailer.setting) %>" title="Settings">
+             <em class="fa fa-cog"></em>
+             <span data-localize="sidebar.nav.Settings"><%= t :auto_pilot_settings%></span>
+           </a>
+         </li>
+         <% end %>
+         <li>
+           <a href="<%= edit_retailer_registration_path%>" title="Profile">
+             <em class="fa fa-user"></em>
+             <span data-localize="sidebar.nav.PROFILE"><%= t :profile%></span>
+           </a>
+         </li>
+         <li>
+           <%= link_to '<em class="fa fa-sign-out"></em><span data-localize="sidebar.nav.LOGOUT">安全退出</span>'.html_safe, destroy_retailer_session_path, title: "Logout", method: "delete" %>
+         </li>
+      </ul>
+      <!-- END sidebar nav-->
+   </nav>
+</div>
+<!-- END Sidebar (left)-->

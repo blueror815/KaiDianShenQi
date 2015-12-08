@@ -1,0 +1,36 @@
+<div class="block-center mt-xl wd-xl">
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+         <a href="#">
+            <img src="<%= image_path('angle/logo-white.png') %>" alt="Image" class="block-center img-rounded img-resize" />
+         </a>
+      </div>
+      <div class="panel-body">
+         <p class="text-center pv">SIGN IN TO CONTINUE.</p>
+         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-group has-feedback">
+               <%= f.text_field :user_name, autofocus: true,  placeholder: "Enter user name", autocomplete: "off", required: "required", class: "form-control" %>
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <div class="form-group has-feedback">
+               <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: "required", class: "form-control" %>
+               <span class="fa fa-lock form-control-feedback text-muted"></span>
+            </div>
+            <div class="clearfix">
+               <div class="checkbox c-checkbox pull-left mt0">
+                  <label>
+                     <%= f.check_box :remember_me %>
+                     <span class="fa fa-check"></span>Remember Me</label>
+               </div>
+               <div class="pull-right"><a href="<%= new_retailer_password_path %>" class="text-muted">Forgot your password?</a>
+               </div>
+            </div>
+            <%= f.submit "Log in" %>
+         <% end %>
+         <p class="pt-lg text-center">Need to Signup?</p><a href="<%= new_retailer_registration_path %>" class="btn btn-block btn-default">Register Now</a>
+      </div>
+   </div>
+   <!-- END panel-->
+</div>
+

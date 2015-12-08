@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Bootstrap Admin App + jQuery">
+        <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+        <title></title>
+
+        <!-- =============== VENDOR STYLES ===============-->
+        <%= stylesheet_link_tag :promotion %>
+        <%= csrf_meta_tags %>
+
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <!-- top navbar-->
+            <header class="topnavbar-wrapper">
+                <%= render partial: "layouts/partials/topnavbar" %>
+            </header>
+            <!-- sidebar-->
+            <aside class="aside">
+                <%= render partial: "layouts/partials/sidebar" %>
+            </aside>
+            <!-- Main section-->
+            <section> 
+                <div class="content-wrapper">
+                    <%= yield %>
+                </div>
+            </section>
+            <!-- Page footer-->
+            <footer>
+                <span>&copy; 2015 - Angle</span>
+            </footer>
+        </div>
+
+
+        <%= javascript_include_tag :promotion %>
+        <script>
+          function promotxt() {
+              var new_text = $('#promotxt1').val() + ' <br> ' + $('#promotxt2').val();
+              $('#phn-message').html(new_text);
+              return new_text;
+          }
+          $(document).ready(function () {
+              var testMsg = "";
+              $('#promotxt1,#promotxt2').keyup(function (e) {
+                  if ($(this).val() != testMsg) {
+                      testMsg = promotxt();
+                  }
+              });
+
+              $('#promobottom').hide();
+<% if current_retailer.promotions.count == 0 %>
+                $('#createPromo').click(function () {
+                    $('#promotop').slideUp();
+                    $('#promobottom').slideDown();
+                    return false;
+                });
+<% else %>
+                $('#promotop').slideUp();
+                $('#promobottom').slideDown();
+<% end %>
+          });
+        </script>
+    </body>
+
+</html>

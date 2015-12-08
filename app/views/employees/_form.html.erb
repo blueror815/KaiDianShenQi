@@ -1,0 +1,27 @@
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :user_name %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+
+    <h3> Permissions </h3>
+    <table class="table">
+      <tr>
+        <td>Module name</td>
+        <td>Access</td>
+      </tr>
+      <% Retailer::PERMISSION_MODULES.each do |permission_module| %>
+        <tr>
+          <td><%= permission_module %></td>
+          <td><%= check_box_tag "permissions[#{permission_module}][can_manage]".to_sym,  nil, @employee.can_access?(permission_module, 'can_manage')%></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>

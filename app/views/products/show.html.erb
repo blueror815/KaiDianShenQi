@@ -1,0 +1,44 @@
+<div class="row top-section">
+  <div class="col-lg-12">
+    <!-- START panel-->
+    <div class="panel panel-green">
+       <div class="panel-heading">
+         Product details
+       </div>
+       <div class="panel-body">
+         <p>
+           <strong>Title:</strong>
+           <%= @product.title %>
+         </p>
+         
+         <p>
+           <strong>Price:</strong>
+           <%= @product.price %>
+         </p>
+         
+         <p>
+           <strong>Description:</strong>
+           <%= @product.description %>
+         </p>
+         
+         <p>
+           <strong>Barcode:</strong>
+           <%= @product.barcode %>
+         </p>
+         
+         <p>
+           <strong>Quantity in stock:</strong>
+           <%= @product.quantity_in_stock %>
+         </p>
+         
+         <p>
+           <strong>Point value:</strong>
+           <%= @product.point_value %>
+         </p>
+         
+         <%= link_to 'Edit', edit_product_path(@product) %> |
+         <%= link_to 'Back', products_path %>
+       </div>
+   </div>
+  </div>
+</div>

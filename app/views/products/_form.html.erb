@@ -1,0 +1,17 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.hidden_field :retailer_id, value: current_retailer.id %>
+    <%= f.input :title %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :barcode %>
+    <%= f.input :quantity_in_stock %>
+    <%= f.input :point_value %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>

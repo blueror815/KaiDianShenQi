@@ -1,0 +1,7 @@
+<div class="qr-code-container">
+  <%= image_tag @award.retailer.setting.qr_image.url, class: 'qr-code'%>
+</div>
+<div style="text-align: center">
+  <h3>Success!</h3>
+  <%= @award.phone_number %> earned <%= @award.points %> points.
+</div>

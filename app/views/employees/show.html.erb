@@ -1,0 +1,31 @@
+<div class="row top-section">
+  <div class="col-lg-12">
+    <!-- START panel-->
+    <div class="panel panel-green">
+       <div class="panel-heading">
+         Employee details
+       </div>
+       <div class="panel-body">
+         <p>
+           <strong>Username</strong>
+           <%= @employee.user_name  %>
+         </p>
+         <p>
+           <h3> Permissions </h3>
+           <table class="table">
+             <tr>
+               <td>Module name</td>
+               <td>Access</td>
+             </tr>
+             <% Employee::PERMISSION_MODULES.each do |permission_module| %>
+               <tr>
+                 <td><%= permission_module %></td>
+                 <td><%=  @employee.can_access?(permission_module, 'can_manage') %></td>
+               </tr>
+             <% end %>
+           </table>
+         </p>
+       </div>
+    </div>
+  </div>
+</div>

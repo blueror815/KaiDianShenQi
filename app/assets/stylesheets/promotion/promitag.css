@@ -1,0 +1,19 @@
+.m-b-15{margin-bottom: 15px;}
+.m-t-0{margin-top: 0;}
+ul.ms-promolist li{padding: 10px 15px 0px; border-bottom: 1px solid #ececec;-webkit-transition: all .7s;transition: all .7s;}
+ul.ms-promolist li:hover{background: rgba(0, 0, 0, 0.04); cursor: pointer;}
+.promotag2{display: block; height: 70px; width: 70px; line-height: 70px; text-align: center; font-size: 30px; border: 2px solid #dddddd; border-radius: 50%;margin-top: 5px;}
+.promo-arrow-right{display: inline-block; font-size: 27px; margin-top: 20px;}
+.ms-number{ font-size: 16px; text-align: center;}
+.ms-number>span{ font-size: 27px;display: block;}
+
+.promitag{  display: block; width: 100px; height: 100px; margin: 20px auto;border-radius: 50%;border: 1px solid #656565;  color: rgba(101, 101, 101, 0.85); line-height: 100px;  font-size: 62px;}
+.block{ display: block;  }
+#example-vertical .body.current{ overflow-y: auto; position: relative; }
+.mrg-l-15{ margin-left: 15px;  }
+.w100{ width: 100%; }
+.promotionsteps{  background: #ffffff;  padding: 15px 10px;}
+.no-bg{  background: none;  box-shadow: 0 0 0 rgba(0, 0, 0, 0);  border: none; }
+.phone-wrapper{margin: 0 auto;max-width:300px; width: 100%; position: relative;}
+.phone-wrapper img{max-width: 100%;}
+.phone-wrapper .phn-message {  color: #ffffff;  height: 68%;  left: 14%;  overflow: auto;  position: absolute;  top: 14%;  width: 71%;  }

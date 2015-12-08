@@ -1,0 +1,30 @@
+<div class="row top-section">
+  <div class="col-lg-12">
+    <!-- START panel-->
+    <div class="panel panel-green">
+       <div class="panel-heading">
+         <%= t :member_details %>
+       </div>
+       <div class="panel-body">
+         <div class="add-tag">
+           <%= form_tag add_tag_member_path(@member), remote: true, authenticity_token: true do %>
+             <input type="text" name="tag" placeholder="Add tag", id="tag" />
+             <input type="submit" class: 'btn btn-success'>
+           <% end %>
+         </div>
+         <br/>
+         <div class="tags">
+           <%= format_tags(@tags).html_safe %>
+         </div>
+         <p>
+           External ID : <%= @member.member_external_id %>
+         </p>
+         <p>Gender: <%= @member.gender %></p>
+         <p></p>
+         <p></p>
+         <p></p>
+       </div>
+    </div>
+    <!-- END panel-->
+  </div>
+</div>

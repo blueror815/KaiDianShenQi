@@ -1,0 +1,88 @@
+<h3><%= t :promotion_heading %>
+    <small><%= t :creating_promotion_heading%></small>
+</h3>
+<!-- START panel-->
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <div class="panel panel-default" id="promotop">
+            <div class="panel-body text-center">
+                <span class="promitag fa fa-tag"></span>
+                <p class="lead"><%= t :target_customers_send_offers_and_track_results%></p>
+                <p>
+                   <%= t :we_will_automatically_reach_your_customer_over_the_preferred_channel %>
+                </p>
+                <br>
+                <a id="createPromo" class="btn btn-primary" href=""> <%= t :start_create_promotion%> </a>
+            </div>
+        </div>
+    </div>
+    <%= form_for @promotion do |f|%>
+      <div class="col-xs-12" id="promobottom">
+              <% if @promotion.errors.any? %>
+                <b>Following errors blocked this promotion from being saved:
+                <ul>
+                    <% @promotion.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                </ul>
+              <% end %>
+              <div class="promotionsteps" id="example-vertical">
+                  <h4><%= t :step_1%></h4>
+                  <section>
+                      <ul class="list-unstyled">
+                          <% @tags.uniq.each do |tag| %>
+                            <li>
+                                <div class="checkbox c-checkbox needsclick">
+                                    <label class="needsclick">
+                                        <%= check_box_tag 'member_types[]',tag, false ,:class=>"needsclick"%>
+                                        <span class="fa fa-check"></span>
+                                        <b><%= tag %></b> <%= t :up_to%> <%= @tags.count(tag) %> 位会员
+                                    </label>
+                                </div>
+                            </li>
+                          <% end %>
+                      </ul>
+                  </section>
+                  <h4><%= t :step_2%></h4>
+                  <section>
+                      <div class="ms-row">
+                          <div class="col-sm-7 col-xs-12">
+                              <form role="form">
+                                  <div class="form-group">
+                                      <label class="block">What the promotional offer? Include restrictions if any.</label>
+                                      <small class="block">Dispaly the both customer and cacher</small>
+                                      <%= f.text_field :offer,:class=>"form-control", :id=>"promotxt1",:required => true %>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="block">What the Occasion? </label>
+                                      <small class="block">Dispaly customer only</small>
+                                      <%= f.text_area :occation,:class=>"form-control", :id=>"promotxt2",:required => true  %>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="block">When the promotional expaire?</label>
+                                      <small class="block">Dispaly the both customer and cacher</small>
+                                      <%= f.text_field :expiry_date,:class=>"form-control datepicker" %>
+                                  </div>
+                                  <div class="form-group" id="test-div">
+                                      <label class="block">Enter your cell phone.</label>
+                                      <%= text_field_tag :phone,nil,:style=>"max-width: 120px",:class=>"form-control", id: 'test_contact_no'  %>
+                                  </div>
+                                  <div class="form-group">
+                                      <a href="#" class="btn btn-inverse" id="send-test">Send Test</a>
+                                      <button class="btn btn-primary mrg-l-15" type="submit" id='send_campain'>Send Campaig</button>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="col-sm-5 col-xs-12">
+                              <div class="phone-wrapper">
+                                  <div id="phn-message" class="phn-message"></div>
+                                  <%= image_tag 'iphn.png',:class=>"img-responsive" %>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+              </div>
+      </div>
+    <% end %>
+</div>
+

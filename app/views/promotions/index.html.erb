@@ -1,0 +1,78 @@
+<div class="row top-section">
+  <div class="col-lg-12">
+    <!-- START panel-->
+    <div class="panel panel-default">
+       <div class="panel-heading">
+         <h3><%= t('promotion') %></h3>
+       </div>
+       <div class="panel-body">
+
+
+<!-- Page content-->
+<div class="content-wrapper">
+   <div class="row">
+       <div class="col-xs-12 col-md-6 m-b-15">
+           <a class="btn btn-primary" href="<%= new_promotion_path %>"><%= t('create_promotion')%> </a>
+       </div>
+       <div class="col-xs-12 col-md-6 text-right m-b-15">
+           <div class="btn-group">
+               <select class="form-control">
+                   <option> All Locations</option>
+                   <option> Location 1</option>
+                   <option> Location 2</option>
+                   <option> Location 3</option>
+                   <option> Location 4</option>
+               </select>
+           </div>
+       </div>
+   </div>
+   <div class="row">
+       <div class="col-xs-12">
+           <ul class="list-unstyled ms-promolist">
+             <% @promotions.each do |promotion| %>
+               <li>
+                   <div class="row">
+                       <div class="col-xs-3 col-md-1">
+                           <span class="promotag2 fa fa-tag"></span>
+                       </div>
+                       <div class="col-xs-9 col-md-4">
+                           <h5 class="m-t-0"><%= format_tags(promotion.promotion_tags.collect(&:tag)).html_safe %></h5>
+                           <h4 class="m-t-0"><%= promotion.offer %></h4>
+                           <p><b><%= t('send') %></b> <%= promotion.created_at.strftime("%B-%d")%> - End on <%= promotion.expiry_date.strftime("%B-%d") %>.</p>
+
+                       </div>
+                       <div class="col-xs-3 col-md-2">
+                           <div class="ms-number">
+                               <span><%= promotion.promotion_sms_messages.count %></span>
+                               <%= t('delivered') %>
+                           </div>
+                       </div>
+                       <div class="col-xs-3 col-md-2">
+                           <div class="ms-number">
+                               <span><%= promotion.promoted_orders.count %></span>
+                               <%= t('order_after_deliver')%>
+                           </div>
+                       </div>
+                       <div class="col-xs-3 col-md-2">
+                           <div class="ms-number">
+                               <span><%= promotion.promoted_orders.collect(&:member).uniq.count %></span>
+                               <%= t('unique_users_after_deliver') %>
+                           </div>
+                       </div>
+                       <div class="col-xs-3 col-md-1 text-right">
+                           <a href="" class="promo-arrow-right">
+                               <span class="fa fa-arrow-right"></span>
+                           </a>
+                       </div>
+                   </div>
+               </li>
+             <% end %>
+           </ul>
+       </div>
+   </div>
+   <!-- END panel-->
+</div>
+      </div>
+    </div    
+  </div>
+</div>
